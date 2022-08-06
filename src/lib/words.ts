@@ -7,7 +7,7 @@ import { VALIDGUESSES3 } from '../constants/validGuesses3'
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getDatabase, ref, onValue } from "firebase/database";
+import { getDatabase, ref, child, get } from "firebase/database";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -28,9 +28,12 @@ const database = getDatabase(app);
 
 var data;
 
-const reference = ref(database,'current');
-onValue(reference, (snapshot) => {
-    data = snapshot.val();
+const dbref = ref(database);
+get(child(dbref,'current')).then((snapshot)=>{
+  const result = snapshot.val();
+  data = result;
+}).catch((error)=>{
+  console.error(error);
 });
 
 export const isWordInWordList = (word: string, wordLength: number) => {
