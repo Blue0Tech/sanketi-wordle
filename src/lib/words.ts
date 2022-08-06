@@ -62,5 +62,5 @@ export const setWordOfDay = (wordLength:number) => {
 }
 
 export const solutionIndex = getWordOfDayIndex()
-export var solution = data.five
+export var solution = ಆಟಸಾಮಾನು
 
