@@ -50,10 +50,7 @@ function App() {
             setWordLength(storedWordLength)
         }
         const loaded = loadGameStateFromLocalStorage(storedWordLength)
-        console.log(loaded?)
-        console.log(loaded?.solution)
         if (loaded?.solution !== solution) {
-            console.log("new word")
             return []
         }
         if (loaded.guesses.includes(solution)) {
@@ -117,6 +114,8 @@ function App() {
   const onShift = () => {
       setShiftPresser(!shiftPressed)
   }
+  
+  const onEnter = () => {
 
     const winningWord = isWinningWord(currentGuess)
 
