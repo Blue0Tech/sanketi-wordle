@@ -27,14 +27,15 @@ export const getWordLengthFromLocalStorage = () => {
   return state ? (JSON.parse(state) as number) : null
 }
 
-export const loadGameStateFromLocalStorage = (wordLength : number) => {
-  var key = gameState5Key
+export const loadGameStateFromLocalStorage = async (wordLength : number) => {
   if(wordLength === 4) {
     key = gameState4Key
   }
-  if(wordLength === 3) {
+  else if(wordLength === 3) {
     key = gameState3Key
+  } else {
+    key = gameState5Key
   }
-  const state = localStorage.getItem(key)
+  const state = await localStorage.getItem(key);
   return state ? (JSON.parse(state) as StoredGameState) : null
 }
