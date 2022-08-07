@@ -30,7 +30,7 @@ function App() {
       }
   })
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false)
-  const [isWordNotFoundAlertOpen, setIsWordNotFoundAlertOpen] = useState(false)
+  const [isWordNotFoundAlertOpen] = useState(false)
   const [isGameLost, setIsGameLost] = useState(false)
   const [shareComplete, setShareComplete] = useState(false)
   const [shiftPressed, setShiftPresser] = useState(false)

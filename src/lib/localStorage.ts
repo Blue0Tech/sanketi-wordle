@@ -11,7 +11,6 @@ type StoredGameState = {
 
 export const saveGameStateToLocalStorage = (gameState: StoredGameState, wordLength : number) => {
   localStorage.setItem(wordLengthKey, JSON.stringify(wordLength))
-  var key;
   if(wordLength === 4) {
     localStorage.setItem(gameState4Key, JSON.stringify(gameState))
   }
@@ -29,13 +28,12 @@ export const getWordLengthFromLocalStorage = () => {
 }
 
 export const loadGameStateFromLocalStorage = (wordLength : number) => {
+  var key = gameState5Key
   if(wordLength === 4) {
     key = gameState4Key
   }
   else if(wordLength === 3) {
     key = gameState3Key
-  } else {
-    key = gameState5Key
   }
   const state = localStorage.getItem(key);
   var result = state ? (JSON.parse(state) as StoredGameState) : null;
