@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/sanketi-wordle/static/css/main.decc6ca5.css",
-    "main.js": "/sanketi-wordle/static/js/main.69dbe752.js",
+    "main.js": "/sanketi-wordle/static/js/main.02fd0a11.js",
     "static/js/787.3500bfec.chunk.js": "/sanketi-wordle/static/js/787.3500bfec.chunk.js",
     "index.html": "/sanketi-wordle/index.html",
     "main.decc6ca5.css.map": "/sanketi-wordle/static/css/main.decc6ca5.css.map",
-    "main.69dbe752.js.map": "/sanketi-wordle/static/js/main.69dbe752.js.map",
+    "main.02fd0a11.js.map": "/sanketi-wordle/static/js/main.02fd0a11.js.map",
     "787.3500bfec.chunk.js.map": "/sanketi-wordle/static/js/787.3500bfec.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.decc6ca5.css",
-    "static/js/main.69dbe752.js"
+    "static/js/main.02fd0a11.js"
   ]
 }
