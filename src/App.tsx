@@ -41,6 +41,7 @@ function App() {
 
   const [guesses, setGuesses] = useState<string[]>(() => {
     var storedWordLength = getWordLengthFromLocalStorage()
+    console.log(storedWordLength);
     if(storedWordLength === 3 || storedWordLength === 4 || storedWordLength === 5) {
       setWordLength(storedWordLength)
       setWordOfDay(storedWordLength)
@@ -114,7 +115,7 @@ function App() {
   const onShift = () => {
       setShiftPresser(!shiftPressed)
   }
-  
+
   const onEnter = () => {
 
     const winningWord = isWinningWord(currentGuess)
