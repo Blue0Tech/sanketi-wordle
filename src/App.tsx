@@ -6,7 +6,7 @@ import { Keyboard } from './components/keyboard/Keyboard'
 import { AboutModal } from './components/modals/AboutModal'
 import { InfoModal } from './components/modals/InfoModal'
 import { WinModal } from './components/modals/WinModal'
-import {isWordInWordList, isWinningWord, solution, setWordOfDay} from './lib/words'
+import { isWinningWord, solution, setWordOfDay} from './lib/words'
 import {
     getWordLengthFromLocalStorage,
     loadGameStateFromLocalStorage,
@@ -50,7 +50,10 @@ function App() {
             setWordLength(storedWordLength)
         }
         const loaded = loadGameStateFromLocalStorage(storedWordLength)
+        console.log(loaded?)
+        console.log(loaded?.solution)
         if (loaded?.solution !== solution) {
+            console.log("new word")
             return []
         }
         if (loaded.guesses.includes(solution)) {
@@ -115,14 +118,6 @@ function App() {
       setShiftPresser(!shiftPressed)
   }
 
-  const onEnter = () => {
-    if (!isWordInWordList(currentGuess, wordLength) && enabled) {
-      setIsWordNotFoundAlertOpen(true)
-      return setTimeout(() => {
-        setIsWordNotFoundAlertOpen(false)
-      }, 2000)
-    }
-
     const winningWord = isWinningWord(currentGuess)
 
     if (knTokenize(currentGuess).length === wordLength && guesses.length < 8 && !isGameWon) {
@@ -146,16 +141,16 @@ function App() {
     <div className="py-8 max-w-7xl mx-auto sm:px-6 lg:px-8">
       <Alert message="ವರ್ಡಲ್ಲ" isOpen={isWordNotFoundAlertOpen} />
       <Alert
-        message={`ತಪ್ಪು, ಇವತ್ತಿನ ಪದ " ${solution} "`}
+        message={`ತಪ್ಪು, ಇಂಡೇಸತ್ತೆ ಪದು " ${solution} "`}
         isOpen={isGameLost}
       />
       <Alert
-        message="ಕಾಪಿ ಮಾಡಲಾಗಿದೆ"
+        message="ಕಾಪಿ ಪಣ್ಣಿರಾನ್ನ"
         isOpen={shareComplete}
         variant="success"
       />
       <div className="flex w-80 mx-auto items-center mb-8">
-        <h1 className="text-lg grow font-bold">ಕನ್ನಡ ವರ್ಡಲ್ಲ</h1>
+        <h1 className="text-lg grow font-bold">ಸಂಕೇತಿ ವರ್ಡಲ್</h1>
         <InformationCircleIcon
           className="h-6 w-6 cursor-pointer"
           onClick={() => setIsInfoModalOpen(true)}
@@ -204,14 +199,6 @@ function App() {
         isOpen={isAboutModalOpen}
         handleClose={() => setIsAboutModalOpen(false)}
       />
-
-      <button
-        type="button"
-        className="mx-auto mt-8 flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-        onClick={ () => window.open("https://alar.ink")}
-      > 
-        ನಿಘಂಟು
-      </button>
         <button
             type="button"
             className="mx-auto mt-8 flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
