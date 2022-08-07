@@ -26,15 +26,15 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
-var data;
+// var data;
 
-const dbref = ref(database);
-get(child(dbref,'current')).then((snapshot)=>{
-  const result = snapshot.val();
-  data = result;
-}).catch((error)=>{
-  console.error(error);
-});
+// const dbref = ref(database);
+// get(child(dbref,'current')).then((snapshot)=>{
+//   const result = snapshot.val();
+//   data = result;
+// }).catch((error)=>{
+//   console.error(error);
+// });
 
 export const isWordInWordList = (word: string, wordLength: number) => {
   return (
@@ -61,7 +61,17 @@ export const getWordOfDay = () => {
 
 export const setWordOfDay = (wordLength:number) => {
   //solution = wordLength===3?WORDS3[solutionIndex]:wordLength===5?WORDS[solutionIndex]:WORDS4[solutionIndex]
-  solution = wordLength===3?data.three:wordLength===5?data.five:data.four
+  // setTimeout(()=>{ //simple way to wait for request to finish
+    // solution = wordLength===3?data.three:wordLength===5?data.five:data.four
+  // },2000);
+  solution = 'ಆಟಸಾಮಾನು';
+  const dbref = ref(database);
+  get(child(dbref,'current')).then((snapshot)=>{
+   const result = snapshot.val();
+   solution = wordLength===3?result.three:wordLength===5?result.five:result.four
+  }).catch((error)=>{
+    console.error(error);
+  });
 }
 
 export const solutionIndex = getWordOfDayIndex()
