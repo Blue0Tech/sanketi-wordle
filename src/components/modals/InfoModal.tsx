@@ -58,33 +58,33 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
                     as="h3"
                     className="text-lg leading-6 font-medium text-gray-900"
                   >
-                    ಆಡುವುದು ಹೇಗೆ
+                    ಉಳಿಯಾಡರದು ಅಪ್ಪಡಿ
                   </Dialog.Title>
                   <div className="mt-2">
                     <p className="text-sm text-gray-500">
-                      8 ಪ್ರಯತ್ನದಲ್ಲಿ ಸರಿಯಾದ ಪದ ಗುರುತಿಸಬೇಕು.  <a href="https://alar.ink">alar.ink</a>  ನಿಘಂಟಿನಲ್ಲಿ ಇರುವ ಪದಗಳನ್ನು ಮಾತ್ರ ಪರಿಗಣಿಸುತ್ತದೆ. ಕೆಳಗೆ ತಿಳಿಸಿರುವ ಹಾಗೆ, ಪ್ರತಿ ಬಣ್ಣವು ಒಂದು ಸುಳಿವು ನೀಡುತ್ತದೆ
+                      8 ಪ್ರಯತ್ನತುಳ್ಳೆ ಸರಿಯಾನ ಪದು ಗುರುತಿಪಿಯಣು.  <a href="https://alar.ink">alar.ink</a>  ನಿಘಂಟಿನಲ್ಲಿ ಇರುವ ಪದಗಳನ್ನು ಮಾತ್ರ ಪರಿಗಣಿಸುತ್ತದೆ. ಕೆಳಗೆ ತಿಳಿಸಿರುವ ಹಾಗೆ, ಪ್ರತಿ ಬಣ್ಣವು ಒಂದು ಸುಳಿವು ನೀಡುತ್ತದೆ
                     </p>
 
                     <div className="flex justify-center mb-1 mt-4">
-                      <Cell value="ಸ್ನಾ"  />
-                      <Cell value="ತ" />
-                      <Cell value="ಕೋ" status="correct"/>
-                      <Cell value="ತ್ತ" />
-                      <Cell value="ರ" />
+                      <Cell value="ಕ"  />
+                      <Cell value="ನಿ" />
+                      <Cell value="ಕ" status="correct"/>
+                      <Cell value="ರಿ" />
+                      <Cell value="ಪಿ" />
                     </div>
                     <p className="text-sm text-gray-500">
-                      3ನೇ ಮನೆಯಲ್ಲಿ ಸರಿಯಾದ ವ್ಯಂಜನವಿದೆ, ಒತ್ತು ಮತ್ತು ಕಾಗುಣಿತ ಕೂಡ ಸರಿಯಿದೆ
+                      [ಮೂಡ] ಹಾತುಳ್ಳೆ ಸರಿಯಾನ ವ್ಯಂಜನು ರಾಂದು, ಒತ್ತು ಪಿನ್ನ ಕಾಗುಣಿತು ಕೂಡ ಸರಿ ರಾಂದು
                     </p>
 
                     <div className="flex justify-center mb-1 mt-4">
                       <Cell value="ಅ" status="inplace" />
-                      <Cell value="ನ" />
-                      <Cell value="ವ"  />
-                      <Cell value="ರ" />
-                      <Cell value="ತ" />
+                      <Cell value="ವ" />
+                      <Cell value="ತ"  />
+                      <Cell value="ರಿ" />
+                      <Cell value="ಪಿ" />
                     </div>
                     <p className="text-sm text-gray-500">
-                      1ನೇ ಮನೆಯಲ್ಲಿ ಇರುವ ಸ್ವರ/ವ್ಯಂಜನ ಸರಿ, ಅದರ ಒತ್ತು ಅಥವಾ ಕಾಗುಣಿತ ತಪ್ಪು
+                      [ಮೊದಲಾ] ಹಾತುಳ್ಳೆ ಇಕ್ಕರ ಸ್ವರು/ವ್ಯಂಜನು ಸರಿ ರಾಂದು, ಅನಾಕಾ ಒತ್ತು ಇಲ್ಲಾ ಕಾಗುಣಿತು ತಪ್ಪು
                     </p>
 
                     <div className="flex justify-center mb-1 mt-4">

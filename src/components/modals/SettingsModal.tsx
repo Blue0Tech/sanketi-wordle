@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import {Dialog, Switch, Transition, RadioGroup} from '@headlessui/react'
+import {Dialog, Transition, RadioGroup} from '@headlessui/react'
 import { CheckIcon } from '@heroicons/react/outline'
 import { XCircleIcon } from '@heroicons/react/outline'
 
@@ -112,7 +112,7 @@ export const SettingsModal = ({ isOpen, handleClose, enabled, onChange, wordLeng
                                                   }`}
                                               >
                                               <span>
-                                                {plan===3?"ಮೂರು":plan===4?"ನಾಲ್ಕು":"ಐದು"} ಅಕ್ಷರದ ಪದ
+                                                {plan===3?"ಮೂಡು":plan===4?"ನಾಲು":"ಅಂಜು"} ಅಕ್ಷರತ್ತೆ ಪದು
                                               </span>{' '}
                                               </RadioGroup.Description>
                                             </div>
@@ -131,27 +131,6 @@ export const SettingsModal = ({ isOpen, handleClose, enabled, onChange, wordLeng
                         </RadioGroup>
                       </div>
                     </div>
-
-                  <span>ನಿಘಂಟಿನಲ್ಲಿ ಇಲ್ಲದ ಪದ ಬಳಸಲು - ಆಫ್ ಮಾಡಿ</span>
-                  <div className="mt-2">
-                    <div className="py-8">
-                      <Switch
-                          checked={enabled}
-                          onChange={onChange}
-                          className={`${enabled ? 'bg-teal-500' : 'bg-red-400'}
-          relative inline-flex flex-shrink-0 h-[38px] w-[74px] border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
-                      >
-                        <span className="sr-only">Use setting</span>
-                        <span
-                            aria-hidden="true"
-                            className={`${enabled ? 'translate-x-9' : 'translate-x-0'}
-            pointer-events-none inline-block h-[34px] w-[34px] rounded-full bg-white shadow-lg transform ring-0 transition ease-in-out duration-200`}
-                        />
-                      </Switch>
-                    </div>
-
-
-                  </div>
                 </div>
               </div>
             </div>

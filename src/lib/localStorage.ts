@@ -36,7 +36,5 @@ export const loadGameStateFromLocalStorage = (wordLength : number) => {
     key = gameState3Key
   }
   const state = localStorage.getItem(key);
-  var result = state ? (JSON.parse(state) as StoredGameState) : null;
-  console.log(result);
-  return result
+  return state ? (JSON.parse(state) as StoredGameState) : null;
 }

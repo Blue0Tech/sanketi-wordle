@@ -41,7 +41,6 @@ function App() {
 
   const [guesses, setGuesses] = useState<string[]>(() => {
     var storedWordLength = getWordLengthFromLocalStorage()
-    console.log(storedWordLength);
     if(storedWordLength === 3 || storedWordLength === 4 || storedWordLength === 5) {
       setWordLength(storedWordLength)
       setWordOfDay(storedWordLength)
@@ -85,21 +84,27 @@ function App() {
   const changeWordLength = () => {
       if (wordLength !== settingsWordLength)
       {
+          console.log(settingsWordLength);
           const loaded = loadGameStateFromLocalStorage(settingsWordLength)
           setWordLength(settingsWordLength)
           setWordOfDay(settingsWordLength)
           setIsGameWon(false)
           setIsGameLost(false)
           if(loaded) {
-              if (loaded?.solution !== solution) {
-                  setGuesses([])
+              console.log('loaded');
+              // if (loaded?.solution !== solution && knTokenize(loaded.solution).length === knTokenize(solution).length) {
+                if (loaded?.solution !== solution) {
+                  console.log('solution change');
+                  setGuesses([]) // doesn't save what is entered when reloaded, is a bug and not a feature
                   return
               }
               if (loaded?.guesses.includes(solution)) {
+                  console.log('correct guess');
                   setGuesses(loaded?.guesses)
                   setIsGameWon(true)
                   return
               }
+              console.log(loaded?.guesses);
               setGuesses(loaded?.guesses)
           }
           else {
@@ -119,7 +124,6 @@ function App() {
   const onEnter = () => {
 
     const winningWord = isWinningWord(currentGuess)
-
     if (knTokenize(currentGuess).length === wordLength && guesses.length < 8 && !isGameWon) {
       setGuesses([...guesses, currentGuess])
       setCurrentGuess('')

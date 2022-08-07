@@ -64,7 +64,6 @@ export const setWordOfDay = (wordLength:number) => {
   // setTimeout(()=>{ //simple way to wait for request to finish
     // solution = wordLength===3?data.three:wordLength===5?data.five:data.four
   // },2000);
-  solution = 'ಆಟಸಾಮಾನು';
   const dbref = ref(database);
   get(child(dbref,'current')).then((snapshot)=>{
    const result = snapshot.val();
