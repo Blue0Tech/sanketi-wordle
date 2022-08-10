@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import { Cell } from '../grid/Cell'
 import { XCircleIcon } from '@heroicons/react/outline'
+import tutorial from './tutorial.png'
 
 type Props = {
   isOpen: boolean
@@ -60,56 +60,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
                   >
                     ಉಳಿಯಾಡರದು ಅಪ್ಪಡಿ
                   </Dialog.Title>
-                  <div className="mt-2">
-                    <p className="text-sm text-gray-500">
-                      8 ಪ್ರಯತ್ನತುಳ್ಳೆ ಸರಿಯಾನ ಪದು ಗುರುತಿಪಿಯಣು.  <a href="https://alar.ink">alar.ink</a>  ನಿಘಂಟಿನಲ್ಲಿ ಇರುವ ಪದಗಳನ್ನು ಮಾತ್ರ ಪರಿಗಣಿಸುತ್ತದೆ. ಕೆಳಗೆ ತಿಳಿಸಿರುವ ಹಾಗೆ, ಪ್ರತಿ ಬಣ್ಣವು ಒಂದು ಸುಳಿವು ನೀಡುತ್ತದೆ
-                    </p>
-
-                    <div className="flex justify-center mb-1 mt-4">
-                      <Cell value="ಕ"  />
-                      <Cell value="ನಿ" />
-                      <Cell value="ಕ" status="correct"/>
-                      <Cell value="ರಿ" />
-                      <Cell value="ಪಿ" />
-                    </div>
-                    <p className="text-sm text-gray-500">
-                      [ಮೂಡ] ಹಾತುಳ್ಳೆ ಸರಿಯಾನ ವ್ಯಂಜನು ರಾಂದು, ಒತ್ತು ಪಿನ್ನ ಕಾಗುಣಿತು ಕೂಡ ಸರಿ ರಾಂದು
-                    </p>
-
-                    <div className="flex justify-center mb-1 mt-4">
-                      <Cell value="ಅ" status="inplace" />
-                      <Cell value="ವ" />
-                      <Cell value="ತ"  />
-                      <Cell value="ರಿ" />
-                      <Cell value="ಪಿ" />
-                    </div>
-                    <p className="text-sm text-gray-500">
-                      [ಮೊದಲಾ] ಹಾತುಳ್ಳೆ ಇಕ್ಕರ ಸ್ವರು/ವ್ಯಂಜನು ಸರಿ ರಾಂದು, ಅನಾಕಾ ಒತ್ತು ಇಲ್ಲಾ ಕಾಗುಣಿತು ತಪ್ಪು
-                    </p>
-
-                    <div className="flex justify-center mb-1 mt-4">
-                      <Cell value="ಕ" />
-                      <Cell value="ವ" />
-                      <Cell value="ಲು" />
-                      <Cell value="ದಾ"status="present" />
-                      <Cell value="ರಿ" />
-                    </div>
-                    <p className="text-sm text-gray-500">
-                      4ನೇ ಮನೆಯಲ್ಲಿ ಇರುವ ವ್ಯಂಜನ ಪದದಲ್ಲಿ ಇದೆ ಆದರೆ ಆ ಮನೆಯಲ್ಲಿ ಅಲ್ಲ
-                    </p>
-
-                    <div className="flex justify-center mb-1 mt-4">
-                      <Cell value="ದೇ" status="absent" swaraStatus="correct"/>
-                      <Cell value="ಶ್ಯ" />
-                      <Cell value="ಕಾಂ" status="present" swaraStatus="correct" />
-                      <Cell value="ಭೋ"  />
-                      <Cell value="ಜಿ" />
-                    </div>
-                    <p className="text-sm text-gray-500">
-                      1ನೇ ಮನೆಯಲ್ಲಿ ಇರುವ ವ್ಯಂಜನ ಪದದಲ್ಲಿ ಇಲ್ಲ, ಆದರೆ ೇ-ಕಾರವು ಆ ಸ್ಥಾನದಲ್ಲಿದೆ.
-                      3ನೇ ಮನೆಯಲ್ಲಿ ಇರುವ ವ್ಯಂಜನ ಪದದಲ್ಲಿ ಆ ಸ್ಥಾನದಲ್ಲಿ ಇಲ್ಲ. ಹಾಗೆ, ಆಂ ಕಾರವು ಆ ಸ್ಥಾನದಲ್ಲಿದೆ.
-                    </p>
-                  </div>
+                  <img src={tutorial} alt="tutorial" />
                 </div>
               </div>
             </div>

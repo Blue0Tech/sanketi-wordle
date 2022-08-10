@@ -1,6 +1,11 @@
 import { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XCircleIcon } from '@heroicons/react/outline'
+import aboutHeader from './aboutHeader.png'
+import aboutDesc from './aboutDesc.png'
+import aboutSrc from './aboutSrc.png'
+import aboutKannada from './aboutKannada.png'
+import aboutOriginal from './aboutOriginal.png'
 
 type Props = {
   isOpen: boolean
@@ -57,28 +62,27 @@ export const AboutModal = ({ isOpen, handleClose }: Props) => {
                     as="h3"
                     className="text-lg leading-6 font-medium text-gray-900"
                   >
-                    About
+                    <img src={aboutHeader} width="180" height="60" alt="Header" />
                   </Dialog.Title>
                   <div className="mt-2">
                     <p className="text-sm text-gray-500">
-                      This is an open source clone of the game Wordle -{' '}
-                      <a href="https://github.com/Blue0Tech/sanketi-wordle" className="underline font-bold"
+                      <img src={aboutDesc} alt="Description" /><br/>
+                      <ul><li><a href="https://github.com/Blue0Tech/sanketi-wordle" className="underline font-bold"
                       >
-                       check out the source here
-                      </a>{' '}
-                      <a
+                       <img src={aboutSrc} alt="Source" />
+                      </a></li><br/>
+                      <li><a
                         href="https://wordalla.online"
                         className="underline font-bold"
                       >
-                        check out the kannada version here
-                      </a>{' '}
-                      and{' '}
-                      <a
+                        <img src={aboutKannada} alt="Kannada" />
+                      </a></li><br/>
+                      <li><a
                         href="https://www.powerlanguage.co.uk/wordle/"
                         className="underline font-bold"
                       >
-                        play the original here
-                      </a>
+                        <img src={aboutOriginal} alt="Original" />
+                      </a></li></ul>
                     </p>
                   </div>
                 </div>

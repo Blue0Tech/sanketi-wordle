@@ -7,6 +7,7 @@ import { AboutModal } from './components/modals/AboutModal'
 import { InfoModal } from './components/modals/InfoModal'
 import { WinModal } from './components/modals/WinModal'
 import { isWinningWord, solution, setWordOfDay} from './lib/words'
+import aboutThisGame from './aboutThisGame.png'
 import {
     getWordLengthFromLocalStorage,
     loadGameStateFromLocalStorage,
@@ -95,7 +96,7 @@ function App() {
               // if (loaded?.solution !== solution && knTokenize(loaded.solution).length === knTokenize(solution).length) {
                 if (loaded?.solution !== solution) {
                   console.log('solution change');
-                  setGuesses([]) // doesn't save what is entered when reloaded, is a bug and not a feature
+                  setGuesses([]) // feature, not a bug
                   return
               }
               if (loaded?.guesses.includes(solution)) {
@@ -154,7 +155,7 @@ function App() {
         variant="success"
       />
       <div className="flex w-80 mx-auto items-center mb-8">
-        <h1 className="text-lg grow font-bold">ಸಂಕೇತಿ ವರ್ಡಲ್</h1>
+        <h1 className="text-lg grow font-bold">ಸಂಕೇತಿ <b>ವಾರ್ಚೊಲ್</b></h1>
         <InformationCircleIcon
           className="h-6 w-6 cursor-pointer"
           onClick={() => setIsInfoModalOpen(true)}
@@ -208,7 +209,7 @@ function App() {
             className="mx-auto mt-8 flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             onClick={() => setIsAboutModalOpen(true)}
         >
-            About this game
+            <img src={aboutThisGame} alt="About this game" />
         </button>
     </div>
   )

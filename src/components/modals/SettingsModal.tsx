@@ -2,6 +2,10 @@ import { Fragment } from 'react'
 import {Dialog, Transition, RadioGroup} from '@headlessui/react'
 import { CheckIcon } from '@heroicons/react/outline'
 import { XCircleIcon } from '@heroicons/react/outline'
+import settingsTitle from './settingsTitle.png'
+import three from './three.png'
+import four from './four.png'
+import five from './five.png'
 
 type Props = {
   isOpen: boolean
@@ -68,7 +72,7 @@ export const SettingsModal = ({ isOpen, handleClose, enabled, onChange, wordLeng
                     as="h3"
                     className="text-lg leading-6 font-medium text-gray-900"
                   >
-                    ಸೆಟ್ಟಿಂಗ್ಸ್
+                    <img src={settingsTitle} width="260" height="43" alt="Title" />
                   </Dialog.Title>
 
                     <div className="w-full px-4 py-16">
@@ -103,7 +107,7 @@ export const SettingsModal = ({ isOpen, handleClose, enabled, onChange, wordLeng
                                                       checked ? 'text-white' : 'text-gray-900'
                                                   }`}
                                               >
-                                                {plan}
+                                      
                                               </RadioGroup.Label>
                                               <RadioGroup.Description
                                                   as="span"
@@ -112,7 +116,7 @@ export const SettingsModal = ({ isOpen, handleClose, enabled, onChange, wordLeng
                                                   }`}
                                               >
                                               <span>
-                                                {plan===3?"ಮೂಡು":plan===4?"ನಾಲು":"ಅಂಜು"} ಅಕ್ಷರತ್ತೆ ಪದು
+                                                <img src={plan===3?three:plan===4?four:five} alt="option" />
                                               </span>{' '}
                                               </RadioGroup.Description>
                                             </div>

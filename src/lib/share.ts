@@ -4,9 +4,9 @@ import {knTokenize} from "./kannada";
 
 export const shareStatus = (guesses: string[], wordLength: number) => {
   navigator.clipboard.writeText(
-    'ಕನ್ನಡ #ವರ್ಡಲ್ಲ ' +
+    'ಸಂಕೇತಿ #ವರ್ಡಲ್ ' +
      solutionIndex +
-      ' (' + wordLength + ' ಅಕ್ಷರದ ಪದ) ' +
+      ' (' + wordLength + ' ಅಕ್ಷರತ್ತೆ ಪದು) ' +
       guesses.length +
       '/8\n\n' +
       generateEmojiGrid(guesses)
