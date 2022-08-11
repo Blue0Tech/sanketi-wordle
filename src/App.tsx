@@ -1,6 +1,7 @@
 import { InformationCircleIcon, MenuIcon } from '@heroicons/react/outline'
 import { useState, useEffect } from 'react'
 import { Alert } from './components/alerts/Alert'
+import { CopyAlert } from './components/alerts/CopyAlert'
 import { Grid } from './components/grid/Grid'
 import { Keyboard } from './components/keyboard/Keyboard'
 import { AboutModal } from './components/modals/AboutModal'
@@ -144,13 +145,12 @@ function App() {
 
   return (
     <div className="py-8 max-w-7xl mx-auto sm:px-6 lg:px-8">
-      <Alert message="ವರ್ಡಲ್ಲ" isOpen={isWordNotFoundAlertOpen} />
+      <Alert message="ವಾರ್ಚೊಲ್" isOpen={isWordNotFoundAlertOpen} />
       <Alert
         message={`ತಪ್ಪು, ಇಂಡೇಸತ್ತೆ ಪದು " ${solution} "`}
         isOpen={isGameLost}
       />
-      <Alert
-        message="ಕಾಪಿ ಪಣ್ಣಿರಾನ್ನ"
+      <CopyAlert
         isOpen={shareComplete}
         variant="success"
       />
