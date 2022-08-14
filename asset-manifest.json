@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/sanketi-wordle/static/css/main.adfe3f7b.css",
-    "main.js": "/sanketi-wordle/static/js/main.a3a7ecac.js",
+    "main.js": "/sanketi-wordle/static/js/main.dec696ac.js",
     "static/js/787.3500bfec.chunk.js": "/sanketi-wordle/static/js/787.3500bfec.chunk.js",
     "static/media/tutorial.png": "/sanketi-wordle/static/media/tutorial.01837d43ecfd6b502c44.png",
     "static/media/copyDialog.png": "/sanketi-wordle/static/media/copyDialog.3bc7b51e0fc34e9c9a6d.png",
     "static/media/wrongWord.png": "/sanketi-wordle/static/media/wrongWord.7597b70197d00f4e75e0.png",
     "index.html": "/sanketi-wordle/index.html",
     "main.adfe3f7b.css.map": "/sanketi-wordle/static/css/main.adfe3f7b.css.map",
-    "main.a3a7ecac.js.map": "/sanketi-wordle/static/js/main.a3a7ecac.js.map",
+    "main.dec696ac.js.map": "/sanketi-wordle/static/js/main.dec696ac.js.map",
     "787.3500bfec.chunk.js.map": "/sanketi-wordle/static/js/787.3500bfec.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.adfe3f7b.css",
-    "static/js/main.a3a7ecac.js"
+    "static/js/main.dec696ac.js"
   ]
 }
