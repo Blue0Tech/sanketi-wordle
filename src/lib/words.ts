@@ -74,5 +74,5 @@ export const setWordOfDay = (wordLength:number) => {
 }
 
 export const solutionIndex = getWordOfDayIndex()
-export var solution = "ಆಟಸಾಮಾನು"
+export var solution = "ಭಾರತದೇಶು"
 

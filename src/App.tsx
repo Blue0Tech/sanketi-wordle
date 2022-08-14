@@ -2,6 +2,7 @@ import { InformationCircleIcon, MenuIcon } from '@heroicons/react/outline'
 import { useState, useEffect } from 'react'
 import { Alert } from './components/alerts/Alert'
 import { CopyAlert } from './components/alerts/CopyAlert'
+import { WrongWordAlert } from './components/alerts/WrongWordAlert'
 import { Grid } from './components/grid/Grid'
 import { Keyboard } from './components/keyboard/Keyboard'
 import { AboutModal } from './components/modals/AboutModal'
@@ -50,13 +51,15 @@ function App() {
     if (storedWordLength) {
         if (storedWordLength !== wordLength){
             setWordLength(storedWordLength)
+            setCurrentGuess('')
         }
         const loaded = loadGameStateFromLocalStorage(storedWordLength)
+        const gameWasWon = loaded?.guesses.includes(solution)
+        if (gameWasWon) {
+            setIsGameWon(true)
+        }
         if (loaded?.solution !== solution) {
             return []
-        }
-        if (loaded.guesses.includes(solution)) {
-            setIsGameWon(true)
         }
         return loaded.guesses
     }
@@ -97,7 +100,7 @@ function App() {
               // if (loaded?.solution !== solution && knTokenize(loaded.solution).length === knTokenize(solution).length) {
                 if (loaded?.solution !== solution) {
                   console.log('solution change');
-                  setGuesses([]) // feature, not a bug
+                  setGuesses([])
                   return
               }
               if (loaded?.guesses.includes(solution)) {
@@ -146,9 +149,9 @@ function App() {
   return (
     <div className="py-8 max-w-7xl mx-auto sm:px-6 lg:px-8">
       <Alert message="ವಾರ್ಚೊಲ್" isOpen={isWordNotFoundAlertOpen} />
-      <Alert
-        message={`ತಪ್ಪು, ಇಂಡೇಸತ್ತೆ ಪದು " ${solution} "`}
+      <WrongWordAlert
         isOpen={isGameLost}
+        solution={solution}
       />
       <CopyAlert
         isOpen={shareComplete}
