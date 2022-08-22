@@ -8,7 +8,7 @@ import { Keyboard } from './components/keyboard/Keyboard'
 import { AboutModal } from './components/modals/AboutModal'
 import { InfoModal } from './components/modals/InfoModal'
 import { WinModal } from './components/modals/WinModal'
-import { isWinningWord, solution, setWordOfDay} from './lib/words'
+import { isWinningWord, solution, setWordOfDay } from './lib/words'
 import aboutThisGame from './aboutThisGame.png'
 import {
     getWordLengthFromLocalStorage,
@@ -18,6 +18,41 @@ import {
 import {knTokenize} from "./lib/kannada";
 import {isValid} from "./lib/statuses";
 import {SettingsModal} from "./components/modals/SettingsModal";
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getDatabase, ref, update } from "firebase/database";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyC6KfUA7nkVcivPV1ZinRQJRVX--oFRVoA",
+  authDomain: "sanketi-wordle.firebaseapp.com",
+  databaseURL: "https://sanketi-wordle-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "sanketi-wordle",
+  storageBucket: "sanketi-wordle.appspot.com",
+  messagingSenderId: "553055548163",
+  appId: "1:553055548163:web:79792087901a57db16ef36"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+
+var rightNow = Date.now();
+var isPlayed = localStorage.getItem("played");
+if(isPlayed) {
+  update(ref(database,'active'),{
+    [isPlayed] : null
+  });
+} else {
+  var uid = Math.random().toString().slice(2);
+  localStorage.setItem("played",uid);
+}
+update(ref(database,'active'),{
+  [isPlayed] : rightNow.toString()
+});
 
 function App() {
   const [currentGuess, setCurrentGuess] = useState('')
@@ -37,13 +72,12 @@ function App() {
   const [isGameLost, setIsGameLost] = useState(false)
   const [shareComplete, setShareComplete] = useState(false)
   const [shiftPressed, setShiftPresser] = useState(false)
-  const [wordLength, setWordLength] = useState(5)
-  const [settingsWordLength, setSettingsWordLength] = useState(5)
+  const [wordLength, setWordLength] = useState(getWordLengthFromLocalStorage()?? 5)
+  const [settingsWordLength, setSettingsWordLength] = useState(getWordLengthFromLocalStorage()?? 5)
   const [enabled, setEnabled] = useState(false)
-
-
   const [guesses, setGuesses] = useState<string[]>(() => {
     var storedWordLength = getWordLengthFromLocalStorage()
+    console.log(storedWordLength)//
     if(storedWordLength === 3 || storedWordLength === 4 || storedWordLength === 5) {
       setWordLength(storedWordLength)
       setWordOfDay(storedWordLength)
@@ -54,6 +88,9 @@ function App() {
             setCurrentGuess('')
         }
         const loaded = loadGameStateFromLocalStorage(storedWordLength)
+        console.log("here")
+        console.log(typeof solution)
+        console.log(solution)
         const gameWasWon = loaded?.guesses.includes(solution)
         if (gameWasWon) {
             setIsGameWon(true)
@@ -61,6 +98,7 @@ function App() {
         if (loaded?.solution !== solution) {
             return []
         }
+        console.log("returning guesses")
         return loaded.guesses
     }
     return []
@@ -87,29 +125,28 @@ function App() {
   }
 
   const changeWordLength = () => {
+      setGuesses([])
       if (wordLength !== settingsWordLength)
       {
-          console.log(settingsWordLength);
+          console.log(wordLength)
+          console.log(settingsWordLength)
           const loaded = loadGameStateFromLocalStorage(settingsWordLength)
+          console.log(loaded?.solution)
+          console.log(solution)
           setWordLength(settingsWordLength)
           setWordOfDay(settingsWordLength)
           setIsGameWon(false)
           setIsGameLost(false)
           if(loaded) {
-              console.log('loaded');
-              // if (loaded?.solution !== solution && knTokenize(loaded.solution).length === knTokenize(solution).length) {
                 if (loaded?.solution !== solution) {
-                  console.log('solution change');
                   setGuesses([])
                   return
               }
               if (loaded?.guesses.includes(solution)) {
-                  console.log('correct guess');
                   setGuesses(loaded?.guesses)
                   setIsGameWon(true)
                   return
               }
-              console.log(loaded?.guesses);
               setGuesses(loaded?.guesses)
           }
           else {
@@ -132,7 +169,6 @@ function App() {
     if (knTokenize(currentGuess).length === wordLength && guesses.length < 8 && !isGameWon) {
       setGuesses([...guesses, currentGuess])
       setCurrentGuess('')
-
       if (winningWord) {
         return setIsGameWon(true)
       }

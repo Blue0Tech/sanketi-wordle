@@ -1,4 +1,4 @@
-//import { WORDS } from '../constants/wordlist'
+﻿//import { WORDS } from '../constants/wordlist'
 //import { WORDS4 } from '../constants/wordlist4'
 //import { WORDS3 } from '../constants/wordlist3'
 import { VALIDGUESSES } from '../constants/validGuesses'
@@ -74,5 +74,5 @@ export const setWordOfDay = (wordLength:number) => {
 }
 
 export const solutionIndex = getWordOfDayIndex()
-export var solution = "ಭಾರತದೇಶು"
-
+export var solution = "ಭಾರತದೇಶು"; // to be fixed for different word lengths to save
+console.log("exporting solution")

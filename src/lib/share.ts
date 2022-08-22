@@ -1,12 +1,11 @@
 import { getGuessStatuses } from './statuses';
-import { solutionIndex } from './words';
+//import { solutionIndex } from './words';
 import {knTokenize} from "./kannada";
 
 export const shareStatus = (guesses: string[], wordLength: number) => {
   navigator.clipboard.writeText(
-    'ಸಂಕೇತಿ #ವರ್ಡಲ್ ' +
-     solutionIndex +
-      ' (' + wordLength + ' ಅಕ್ಷರತ್ತೆ ಪದು) ' +
+    'ಸಂಕೇತಿ #ವಾರ್ಚೊಲ್ ' +
+      ' (' + (wordLength===3?'೩':wordLength===4?'೪':'೫') + ' ಅಕ್ಷರಂಗಽ) ' +
       guesses.length +
       '/8\n\n' +
       generateEmojiGrid(guesses)
