@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\public",
+    "\\src",
+    "\\src\\components",
+    "\\src\\components\\keyboard",
+    "\\src\\components\\mini-grid",
+    "\\src\\components\\modals",
+    "\\src\\constants",
+    "\\src\\fonts",
+    "\\src\\lib"
+  ],
+  "SelectedNode": "\\src\\components\\modals\\SettingsModal.tsx",
+  "PreviewInSolutionExplorer": false
+}

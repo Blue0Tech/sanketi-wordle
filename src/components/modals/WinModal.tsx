@@ -70,16 +70,16 @@ export const WinModal = ({
                     aria-hidden="true"
                   />
                 </div>
-                <div className="mt-3 text-center sm:mt-5">
+                <div className="mt-3 text-center sm:mt-5" style={{fontFamily:"Sanketi"}}>
                   <Dialog.Title
                     as="h3"
                     className="text-lg leading-6 font-medium text-gray-900"
                   >
-                    ವರ್ಡ್ ಹೌದು!
+                    ಸರಿಯಾನ ಚೊಲ್ಲೢ!
                   </Dialog.Title>
                   <div className="mt-2">
                     <MiniGrid guesses={guesses} />
-                    <p className="text-sm text-gray-500">ಭಲೇ</p>
+                    <p className="text-sm text-gray-500">ಭಳಾ</p>
                   </div>
                 </div>
               </div>

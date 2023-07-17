@@ -7,7 +7,7 @@ type Props = {
 }
 
 export const CurrentRow = ({ guess, wordLength }: Props) => {
-  const splitGuess = knTokenize(guess)
+  const splitGuess = knTokenize(guess).slice(0,wordLength) // fixes the problem that crashes the game when boxes are full and user switches to shorter word length
   const emptyCells = Array.from(Array(wordLength - splitGuess.length))
 
   return (

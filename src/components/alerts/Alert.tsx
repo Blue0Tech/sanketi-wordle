@@ -1,6 +1,7 @@
 import { Fragment } from 'react'
 import { Transition } from '@headlessui/react'
 import classNames from 'classnames'
+import "../../Stylesheet.css";
 
 type Props = {
   isOpen: boolean
@@ -30,7 +31,7 @@ export const Alert = ({ isOpen, message, variant = 'warning' }: Props) => {
     >
       <div className={classes}>
         <div className="p-4">
-          <p className="text-sm text-center font-medium text-gray-900">
+          <p style={{fontFamily:"Sanketi"}} className="text-sm text-center font-medium text-gray-900">
             {message}
           </p>
         </div>

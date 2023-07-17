@@ -16,17 +16,18 @@ export type CharValue =
   | 'ಇ' | 'ಈ'
   | 'ಒ' | 'ಓ'
   | 'ಪ' | 'ಫ'
+  | 'ೡ' | '॒'
   | 'ಅ' | 'ಆ'
   | 'ಸ' | 'ಶ'
   | 'ದ' | 'ಧ'
-  | '್' | '‌್'
+  | '್' | 'ಌ'
   | 'ಗ' | 'ಘ'
   | 'ಹ' | 'ಃ'
   | 'ಜ' | 'ಝ'
   | 'ಕ' | 'ಖ'
   | 'ಲ' | 'ಳ'
   | 'ಞ'| 'ಙ'
-  | 'ಷ'| 'ಷ'
+  | 'ಷ'| 'ಀ'
   | 'ಚ'| 'ಛ'
   | 'ವ'| 'ಔ'
   | 'ಬ'| 'ಭ'
@@ -48,6 +49,8 @@ enToKnMap.set('A','ಾ')
 enToKnMap.set('V','ೌ')
 enToKnMap.set('e','ೆ' )
 enToKnMap.set('E','ೇ')
+enToKnMap.set('[','ೣ')
+enToKnMap.set('{','॒')
 enToKnMap.set('q','ಟ')
 enToKnMap.set('Q','ಠ')
 enToKnMap.set('w','ಡ' )
@@ -63,7 +66,7 @@ enToKnMap.set('S','ಶ')
 enToKnMap.set('d','ದ')
 enToKnMap.set('D','ಧ')
 enToKnMap.set('f','್')
-enToKnMap.set('F','‌್')
+enToKnMap.set('F','ೢ')
 enToKnMap.set('g','ಗ')
 enToKnMap.set('G','ಘ')
 enToKnMap.set('h','ಹ')
@@ -77,7 +80,7 @@ enToKnMap.set('L','ಳ')
 enToKnMap.set('z','ಞ')
 enToKnMap.set('Z','ಙ')
 enToKnMap.set('x','ಷ')
-enToKnMap.set('X','ಷ')
+enToKnMap.set('X','ಀ')
 enToKnMap.set('c','ಚ')
 enToKnMap.set('C','ಛ')
 enToKnMap.set('v','ವ')
@@ -97,12 +100,14 @@ enToKnVowelMap.set('I','ಈ')
 enToKnVowelMap.set('u','ಉ')
 enToKnVowelMap.set('U','ಊ')
 enToKnVowelMap.set('R','ಋ')
-enToKnVowelMap.set('e','ಎ' )
+enToKnVowelMap.set('e','ಎ')
 enToKnVowelMap.set('E','ಏ')
 enToKnVowelMap.set('Y','ಐ')
 enToKnVowelMap.set('o','ಒ')
 enToKnVowelMap.set('O','ಓ')
 enToKnVowelMap.set('V','ಔ')
+enToKnVowelMap.set('F','ಌ')
+enToKnVowelMap.set('[','ೡ')
 
 export const vowelToVowelMap = new Map();
 vowelToVowelMap.set('ಅ','')
@@ -112,12 +117,14 @@ vowelToVowelMap.set('ಈ','ೀ')
 vowelToVowelMap.set('ಉ','ು')
 vowelToVowelMap.set('ಊ','ೂ')
 vowelToVowelMap.set('ಋ','ೃ')
-vowelToVowelMap.set('ಎ' ,'ೆ')
+vowelToVowelMap.set('ಎ','ೆ')
 vowelToVowelMap.set('ಏ','ೇ')
 vowelToVowelMap.set('ಐ','ೈ')
 vowelToVowelMap.set('ಒ','ೊ')
 vowelToVowelMap.set('ಓ','ೋ')
 vowelToVowelMap.set('ಔ','ೌ')
+vowelToVowelMap.set('ಌ','ೢ')
+vowelToVowelMap.set('ೡ','ೣ')
 
 export const isValid = (
     currentGuess: string, character: string
@@ -159,7 +166,7 @@ export const getStatuses = (
     })
     splitGuessVyanjana.forEach((letter, i) => {
       if (splitSolutionVyanjana.includes(letter) && charLevel[charObj[letter]] < 1) {
-        // make status absent
+        // make status present
         return (charObj[letter] = 'present')
       }
     })

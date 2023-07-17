@@ -1,11 +1,9 @@
 import { getGuessStatuses } from './statuses'
-import { solutionIndex } from './words'
 import {knTokenize} from "./kannada";
 
 export const shareStatus = (guesses: string[], wordLength: number) => {
   navigator.clipboard.writeText(
-    'ಕನ್ನಡ #ವರ್ಡಲ್ಲ ' +
-      (wordLength===4?(solutionIndex-23):solutionIndex) +
+    'ಸಂಕೇತಿ #ವಾರ್ಚೊಲ್ ' +
       ' ' +
       guesses.length +
       '/8\n\n' +

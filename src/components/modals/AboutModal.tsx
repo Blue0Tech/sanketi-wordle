@@ -1,6 +1,7 @@
-import { Fragment } from 'react'
+﻿import { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XCircleIcon } from '@heroicons/react/outline'
+import "../../Stylesheet.css";
 
 type Props = {
   isOpen: boolean
@@ -56,24 +57,32 @@ export const AboutModal = ({ isOpen, handleClose }: Props) => {
                   <Dialog.Title
                     as="h3"
                     className="text-lg leading-6 font-medium text-gray-900"
+                    style={{fontFamily:"Sanketi"}}
                   >
-                    About
+                    ಕುರಿಚೢ
                   </Dialog.Title>
                   <div className="mt-2">
-                    <p className="text-sm text-gray-500">
-                      This is an open source clone of the game Wordle -{' '}
+                    <p className="text-sm text-gray-500" style={{fontFamily:"Sanketi"}}>
+                      ವಾರ್ಚೊಲ್ ವರ್ಡಲ್ ವುಳಯಾಟೢತ್ತೆ ತರಂದ ಆಕರತ್ತೆ ಪ್ರತಿಕೃತಿ {"\n"}
+                      <br />
+                      <br />
                       <a
-                        href="https://github.com/amoghaUdupa/wordle"
+                        href="https://github.com/Blue0Tech/sanketi-wordle" // to be modified to new source link soon
                         className="underline font-bold"
                       >
-                        check out the code here
-                      </a>{' '}
-                      and{' '}
+                        ಆಕರತ್ತಽ ಇಂಗೢ ಪಾರಕಽ
+                      </a> <br />
                       <a
-                        href="https://www.powerlanguage.co.uk/wordle/"
+                        href="https://wordalla.online"
                         className="underline font-bold"
                       >
-                        play the original here
+                        ಕನ್ನಡ ಆವೃತಿಯಽ ಇಂಗೢ ಪಾರಕಽ
+                      </a> <br />
+                      <a
+                        href="https://powerlanguage.co.uk/wordle"
+                        className="underline font-bold"
+                      >
+                        ಮೂಲತ್ತಽ ಇಂಗೢ ಆಡಕಽ
                       </a>
                     </p>
                   </div>

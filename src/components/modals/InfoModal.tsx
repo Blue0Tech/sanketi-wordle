@@ -53,61 +53,58 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
                 />
               </div>
               <div>
-                <div className="text-center">
+                <div className="text-center" style={{fontFamily:"Sanketi"}}>
                   <Dialog.Title
                     as="h3"
                     className="text-lg leading-6 font-medium text-gray-900"
                   >
-                    ಆಡುವುದು ಹೇಗೆ
+                    ವುಳಯಾಡರ ರೀತಿ
                   </Dialog.Title>
                   <div className="mt-2">
                     <p className="text-sm text-gray-500">
-                      8 ಪ್ರಯತ್ನದಲ್ಲಿ ಸರಿಯಾದ ಪದ ಗುರುತಿಸಬೇಕು.  <a href="https://alar.ink">alar.ink</a>  ನಿಘಂಟಿನಲ್ಲಿ ಇರುವ ಪದಗಳನ್ನು ಮಾತ್ರ ಪರಿಗಣಿಸುತ್ತದೆ. ಕೆಳಗೆ ತಿಳಿಸಿರುವ ಹಾಗೆ, ಪ್ರತಿ ಬಣ್ಣವು ಒಂದು ಸುಳಿವು ನೀಡುತ್ತದೆ
+                      ೡಟ್ಟೢ ಪ್ರಯತ್ನಂಗಡುಳ್ಳೆ ಚೊಲ್ಲಽ ಗುರುತಿಪಿಯಣುಀ. ಕೂಳೆ ಕುಡುತಿಕ್ಕರಹುಡಿ ಒರೊರೢ ವಣ್ಣಮೂ ಒರೊರೢ ಸುಳೢಹಽಕುಡಂದೢ.
                     </p>
 
                     <div className="flex justify-center mb-1 mt-4">
-                      <Cell value="ಸ್ನಾ"  />
-                      <Cell value="ತ" />
-                      <Cell value="ಕೋ" status="correct"/>
-                      <Cell value="ತ್ತ" />
-                      <Cell value="ರ" />
+                      <Cell value="ಸಂ" />
+                      <Cell value="ಕೇ" status="correct"/>
+                      <Cell value="ತಿ" />
                     </div>
                     <p className="text-sm text-gray-500">
-                      3ನೇ ಮನೆಯಲ್ಲಿ ಸರಿಯಾದ ವ್ಯಂಜನವಿದೆ, ಒತ್ತು ಮತ್ತು ಕಾಗುಣಿತ ಕೂಡ ಸರಿಯಿದೆ
+                      ರೆಂಡಾ ಚೌಕತ್ತುಳ್ಳೆ ಅಕ್ಷರು ಸರಿಯಾಹ ರಾಂದೢ. ೡಂಡಾಕ ವ್ಯಂಜನು, ಕಾಗುಣಿತು, ಒತ್ತೢಎಲ್ಲಾಮು ಸರಿ ರಾನ್ನಽ.
                     </p>
 
                     <div className="flex justify-center mb-1 mt-4">
                       <Cell value="ಅ" status="inplace" />
-                      <Cell value="ನ" />
-                      <Cell value="ವ"  />
-                      <Cell value="ರ" />
-                      <Cell value="ತ" />
-                    </div>
-                    <p className="text-sm text-gray-500">
-                      1ನೇ ಮನೆಯಲ್ಲಿ ಇರುವ ಸ್ವರ/ವ್ಯಂಜನ ಸರಿ, ಅದರ ಒತ್ತು ಅಥವಾ ಕಾಗುಣಿತ ತಪ್ಪು
-                    </p>
-
-                    <div className="flex justify-center mb-1 mt-4">
-                      <Cell value="ಕ" />
-                      <Cell value="ವ" />
-                      <Cell value="ಲು" />
-                      <Cell value="ದಾ"status="present" />
+                      <Cell value="ಲ" />
+                      <Cell value="ಮಾ"  />
                       <Cell value="ರಿ" />
                     </div>
                     <p className="text-sm text-gray-500">
-                      4ನೇ ಮನೆಯಲ್ಲಿ ಇರುವ ವ್ಯಂಜನ ಪದದಲ್ಲಿ ಇದೆ ಆದರೆ ಆ ಮನೆಯಲ್ಲಿ ಅಲ್ಲ
+                      ಮುದ್ಲಾ ಚೌಕತ್ತುಳ್ಳೆ ವಂದಿಕ್ಕರ ವ್ಯಂಜನು/ಸ್ವರು ಸರಿ, ಆನಾಕ ಒತ್ತೢಇಲ್ಲಯೋ ಕಾಗುಣಿತು ಸರಿಯಿಲ್ಲ.
+                    </p>
+
+                    <div className="flex justify-center mb-1 mt-4">
+                      <Cell value="ಅ" />
+                      <Cell value="ಲ" />
+                      <Cell value="ಮಾ" />
+                      <Cell value="ರಿ"status="present" />
+                    </div>
+                    <p className="text-sm text-gray-500">
+                      ನಾಲಾ ಚೌಕತ್ತುಳ್ಳೆ ಇಕ್ಕರ ವ್ಯಂಜನು ಚೊಲ್ಲುಳ್ಳೆ ವರಂದೢ, ಆನಾಕ ಇಂದ ಚೌಕತ್ತುಳ್ ಅಂಡೢ.
                     </p>
 
                     <div className="flex justify-center mb-1 mt-4">
                       <Cell value="ದೇ" status="absent" swaraStatus="correct"/>
                       <Cell value="ಶ್ಯ" />
                       <Cell value="ಕಾಂ" status="present" swaraStatus="correct" />
-                      <Cell value="ಭೋ"  />
-                      <Cell value="ಜಿ" />
+                      <Cell value="ಬೋ"  />
+                      <Cell value="ಧಿ" status="inplace" swaraStatus="correct"/>
                     </div>
                     <p className="text-sm text-gray-500">
-                      1ನೇ ಮನೆಯಲ್ಲಿ ಇರುವ ವ್ಯಂಜನ ಪದದಲ್ಲಿ ಇಲ್ಲ, ಆದರೆ ೇ-ಕಾರವು ಆ ಸ್ಥಾನದಲ್ಲಿದೆ.
-                      3ನೇ ಮನೆಯಲ್ಲಿ ಇರುವ ವ್ಯಂಜನ ಪದದಲ್ಲಿ ಆ ಸ್ಥಾನದಲ್ಲಿ ಇಲ್ಲ. ಹಾಗೆ, ಆಂ ಕಾರವು ಆ ಸ್ಥಾನದಲ್ಲಿದೆ.
+                      ಮುದ್ಲಾ ಚೌಕತ್ತುಳ್ಳೆ ಇಕ್ಕರ ವ್ಯಂಜನು ಚೊಲ್ಲಿಂದುಳ್ ವರಲ್ಲಽ. ಆನಾಕ "ೀ"ಕಾರು ಅಂದ ಉಡತ್ತುಳ್ ಸರಿಯಾಹ ರಾಂದೢ.
+                      ಮೂಡಾ ಚೌಕತ್ತುಳ್ಳೆ ವಂದಿಕ್ಕರ ವ್ಯಂಜನು ಚೊಲ್ಲುಳ್ಳೆ ವೋರೆ ೡಂಗೋ ವರಂದೢ.
+                      ಅಂಜಾ ಚೌಕತ್ತುಳ್ಳೆ ವಂದಿಕ್ಕರ ವ್ಯಂಜನು ಪಿನ್ನ ಸ್ವರು ಸರಿ. ಒತ್ತಕ್ಷರು ತ್ಪ್ಪೢ.
                     </p>
                   </div>
                 </div>

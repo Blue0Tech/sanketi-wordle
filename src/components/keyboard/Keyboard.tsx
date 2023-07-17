@@ -2,6 +2,7 @@ import { KeyValue } from '../../lib/keyboard'
 import {getStatuses, enToKnMap, enToKnVowelMap, vowelToVowelMap} from '../../lib/statuses'
 import { Key } from './Key'
 import { useEffect } from 'react'
+import "../../Stylesheet.css";
 
 type Props = {
   onChar: (value: string) => void
@@ -42,7 +43,7 @@ export const Keyboard = ({ onChar, onDelete, onEnter, onShift, shiftPressed, gue
         onShift()
       } else {
         const key = e.key
-        if ((key >= "a" && key <= "z") || (key >= "A" && key <= "Z")) {
+        if ((key >= "a" && key <= "z") || (key >= "A" && key <= "Z") || key === "[" || key === "{") {
           if(currentGuess.length===0) {
             if(enToKnVowelMap.has(e.key)) {
               onChar(enToKnVowelMap.get(e.key))
@@ -74,7 +75,7 @@ export const Keyboard = ({ onChar, onDelete, onEnter, onShift, shiftPressed, gue
     }
   }, [onShift])
   return (
-    <div>
+    <div style={{fontFamily:"Sanketi"}}>
       <div className="flex justify-center mb-1">
         <Key value={shiftPressed ? "ಠ" : "ಟ"} onClick={onClick} status={charStatuses[shiftPressed ? "ಠ" : "ಟ"]} />
         <Key value={shiftPressed ? "ಢ" : "ಡ"} onClick={onClick} status={charStatuses[shiftPressed ? "ಢ" : "ಡ"]} />
@@ -86,6 +87,7 @@ export const Keyboard = ({ onChar, onDelete, onEnter, onShift, shiftPressed, gue
         <Key value={shiftPressed ? "ಈ" : "ಇ"} onClick={onClick} status={charStatuses[shiftPressed ? "ಈ" : "ಇ"]} />
         <Key value={shiftPressed ? "ಓ" : "ಒ"} onClick={onClick} status={charStatuses[shiftPressed ? "ಓ" : "ಒ"]} />
         <Key value={shiftPressed ? "ಫ" : "ಪ"} onClick={onClick} status={charStatuses[shiftPressed ? "ಫ" : "ಪ"]} />
+        <Key value={shiftPressed ? "॒" : "ೡ"} onClick={onClick} status={charStatuses[shiftPressed ? "॒" : "ೡ"]} />
       </div>
       <div className="flex justify-center mb-1">
         <Key width={65.4} value="SHIFT" onClick={onClick} status={shiftPressed?'absent':undefined}>
@@ -94,7 +96,7 @@ export const Keyboard = ({ onChar, onDelete, onEnter, onShift, shiftPressed, gue
         <Key value={shiftPressed ? "ಆ":"ಅ"} onClick={onClick} status={charStatuses[shiftPressed ? "ಆ":"ಅ"]} />
         <Key value={shiftPressed ? "ಶ":"ಸ"} onClick={onClick} status={charStatuses[shiftPressed ? "ಶ":"ಸ"]} />
         <Key value={shiftPressed ? "ಧ":"ದ"} onClick={onClick} status={charStatuses[shiftPressed ? "ಧ":"ದ"]} />
-        <Key value={shiftPressed ? "್":"್"} onClick={onClick} status={charStatuses[shiftPressed ? "‌್":"‌್"]} />
+        <Key value={shiftPressed ? "ಌ":"್"} onClick={onClick} status={charStatuses[shiftPressed ? "ಌ":"‌್"]} />
         <Key value={shiftPressed ? "ಘ":"ಗ"} onClick={onClick} status={charStatuses[shiftPressed ? "ಘ":"ಗ"]} />
         <Key value={shiftPressed ? "ಃ":"ಹ"} onClick={onClick} status={charStatuses[shiftPressed ? "ಃ":"ಹ"]} />
         <Key value={shiftPressed ? "ಝ":"ಜ"} onClick={onClick} status={charStatuses[shiftPressed ? "ಝ":"ಜ"]} />
@@ -109,7 +111,7 @@ export const Keyboard = ({ onChar, onDelete, onEnter, onShift, shiftPressed, gue
           Enter
         </Key>
         <Key value={shiftPressed ? "ಙ":"ಞ"} onClick={onClick} status={charStatuses[shiftPressed ? "ಙ":"ಞ"]} />
-        <Key value={shiftPressed ? "ಷ":"ಷ"} onClick={onClick} status={charStatuses[shiftPressed ? "ಷ":"ಷ"]} />
+        <Key value={shiftPressed ? "ಀ":"ಷ"} onClick={onClick} status={charStatuses[shiftPressed ? "ಀ":"ಷ"]} />
         <Key value={shiftPressed ? "ಛ":"ಚ"} onClick={onClick} status={charStatuses[shiftPressed ? "ಛ":"ಚ"]} />
         <Key value={shiftPressed ? "ಔ":"ವ"} onClick={onClick} status={charStatuses[shiftPressed ? "ಔ":"ವ"]} />
         <Key value={shiftPressed ? "ಭ":"ಬ"} onClick={onClick} status={charStatuses[shiftPressed ? "ಭ":"ಬ"]} />

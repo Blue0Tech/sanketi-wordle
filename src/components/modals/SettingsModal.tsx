@@ -1,23 +1,22 @@
 import { Fragment } from 'react'
-import {Dialog, Switch, Transition, RadioGroup} from '@headlessui/react'
+import {Dialog, Transition, RadioGroup} from '@headlessui/react'
 import { CheckIcon } from '@heroicons/react/outline'
 import { XCircleIcon } from '@heroicons/react/outline'
 
 type Props = {
   isOpen: boolean
   handleClose: () => void
-  enabled: boolean
-  onChange: () => void
   wordLength: number
   setWordLength: (arg0: number) => void
 }
 
 const plans = [
+3,
 4,
 5,
 ]
 
-export const SettingsModal = ({ isOpen, handleClose, enabled, onChange, wordLength, setWordLength }: Props) => {
+export const SettingsModal = ({ isOpen, handleClose, wordLength, setWordLength }: Props) => {
   return (
     <Transition.Root show={isOpen} as={Fragment}>
       <Dialog
@@ -54,7 +53,7 @@ export const SettingsModal = ({ isOpen, handleClose, enabled, onChange, wordLeng
             leaveFrom="opacity-100 translate-y-0 sm:scale-100"
             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
           >
-            <div className="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-sm sm:w-full sm:p-6">
+            <div style={{fontFamily:"Sanketi"}} className="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-sm sm:w-full sm:p-6">
               <div className="absolute right-4 top-4">
                 <XCircleIcon
                   className="h-6 w-6 cursor-pointer"
@@ -111,7 +110,7 @@ export const SettingsModal = ({ isOpen, handleClose, enabled, onChange, wordLeng
                                                   }`}
                                               >
                                               <span>
-                                                {plan===4?"ನಾಲ್ಕು":"ಐದು"} ಅಕ್ಷರದ ಪದ
+                                                {plan===4?"ನಾಲೢ":plan===3?"ಮೂಡೢ":"ಅಂಜೢ"} ಅಕ್ಷರಂಗಡೆ ಚೊಲ್ಲೢ
                                               </span>{' '}
                                               </RadioGroup.Description>
                                             </div>
@@ -130,27 +129,6 @@ export const SettingsModal = ({ isOpen, handleClose, enabled, onChange, wordLeng
                         </RadioGroup>
                       </div>
                     </div>
-
-                  <span>ನಿಘಂಟಿನಲ್ಲಿ ಇಲ್ಲದ ಪದ ಬಳಸಲು - ಆಫ್ ಮಾಡಿ</span>
-                  <div className="mt-2">
-                    <div className="py-8">
-                      <Switch
-                          checked={enabled}
-                          onChange={onChange}
-                          className={`${enabled ? 'bg-teal-500' : 'bg-red-400'}
-          relative inline-flex flex-shrink-0 h-[38px] w-[74px] border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
-                      >
-                        <span className="sr-only">Use setting</span>
-                        <span
-                            aria-hidden="true"
-                            className={`${enabled ? 'translate-x-9' : 'translate-x-0'}
-            pointer-events-none inline-block h-[34px] w-[34px] rounded-full bg-white shadow-lg transform ring-0 transition ease-in-out duration-200`}
-                        />
-                      </Switch>
-                    </div>
-
-
-                  </div>
                 </div>
               </div>
             </div>
