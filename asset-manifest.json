@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.f62aeb3d.css",
-    "main.js": "/static/js/main.f1e5f2ff.js",
-    "static/js/787.3500bfec.chunk.js": "/static/js/787.3500bfec.chunk.js",
-    "static/media/Kannada Sanketi Mod.otf": "/static/media/Kannada Sanketi Mod.6c923e4167f36b424d5c.otf",
-    "index.html": "/index.html",
-    "main.f62aeb3d.css.map": "/static/css/main.f62aeb3d.css.map",
-    "main.f1e5f2ff.js.map": "/static/js/main.f1e5f2ff.js.map",
-    "787.3500bfec.chunk.js.map": "/static/js/787.3500bfec.chunk.js.map"
+    "main.css": "/sanketi-wordle/static/css/main.3448c931.css",
+    "main.js": "/sanketi-wordle/static/js/main.be5df0fc.js",
+    "static/js/787.3500bfec.chunk.js": "/sanketi-wordle/static/js/787.3500bfec.chunk.js",
+    "static/media/Kannada Sanketi Mod.otf": "/sanketi-wordle/static/media/Kannada Sanketi Mod.6c923e4167f36b424d5c.otf",
+    "index.html": "/sanketi-wordle/index.html",
+    "main.3448c931.css.map": "/sanketi-wordle/static/css/main.3448c931.css.map",
+    "main.be5df0fc.js.map": "/sanketi-wordle/static/js/main.be5df0fc.js.map",
+    "787.3500bfec.chunk.js.map": "/sanketi-wordle/static/js/787.3500bfec.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f62aeb3d.css",
-    "static/js/main.f1e5f2ff.js"
+    "static/css/main.3448c931.css",
+    "static/js/main.be5df0fc.js"
   ]
 }
