@@ -36,19 +36,14 @@ const database = getDatabase(app);
 
 var rightNow = Date.now();
 var isPlayed = localStorage.getItem("played");
-if (isPlayed) {
-    update(ref(database, 'active'), {
-        [isPlayed]: null
-    });
-} else {
+if(!isPlayed) {
     var uid = Math.random().toString().slice(2);
+    isPlayed = uid;
     localStorage.setItem("played", uid);
 }
-if (isPlayed!=null) {
-    update(ref(database, 'active'), {
-        [isPlayed]: rightNow.toString()
-    });
-}
+update(ref(database, 'active'), {
+    [isPlayed]: rightNow.toString()
+});
 
 function App() {
   const [currentGuess, setCurrentGuess] = useState('')
